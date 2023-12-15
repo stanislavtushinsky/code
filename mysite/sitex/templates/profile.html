@@ -1,0 +1,23 @@
+{% extends "home.html" %}
+
+
+{% block content %}
+
+<title>profile</title>
+<style>
+    h1, h2 {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+</style>
+{% block title %}<h1>Profile Page</h1>{% endblock title %}
+
+    <div class="row my-3 p-3">
+        <h2>This is the page for <b>{{ name }}</b></h2>
+        <h2>Your email is <b>{{ email }}</b></h2>
+        <h2>Your role is <b>{{ role }}</b></h2>
+        {% if amount != None %}
+        <h2>Your last request was convert {{ amount }} {{ fcurrency }} to {{ tcurrency }}</b></h2>
+        {% endif %}
+    </div>
+
+{% endblock content %}

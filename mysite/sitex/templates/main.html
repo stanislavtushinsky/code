@@ -1,0 +1,16 @@
+{% extends "home.html" %}
+
+{% block content %}
+<title>homepage</title>
+    {% if user.is_authenticated%}
+        <form method="POST">
+            {% csrf_token %}
+            <h1>{{ form }}</h1>
+            <h1>Result: {{ result }}</h1>
+            <button type="submit" class="registerbtn">Calculate</button>
+        </form>
+    {% else %}
+        <h2>To access the currency exchange, you must register or log in</h2>
+    {% endif %}
+</div>
+{% endblock content %}

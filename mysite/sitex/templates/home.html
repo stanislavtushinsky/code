@@ -1,0 +1,22 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'home/style.css' %}">
+<div class="header">
+    <style>
+        a {
+        font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+    <a href="{% url 'home' %}" class="logo">Currency exchanger</a>
+    {% if user.is_authenticated%}
+        <div class="header-right">
+            <a href="{% url 'profile' %}">{{ name }}</a>
+            <a href="{% url 'logout' %}">Log Out</a>
+        </div>
+    {% else %}
+        <div class="header-right">
+            <a href="{% url 'login' %}">Log In</a>
+            <a href="{% url 'register' %}">Register</a>
+        </div>
+    {% endif %}
+</div>
+<div>{% block content %}{% endblock content %}</div>
